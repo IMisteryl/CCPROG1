@@ -4,16 +4,16 @@ int main() {
   char name, prod;
   int price, quant, x;
   
-  printf("Hello! What is the first letter of your name?: \n");
+  printf("Hello! What is the first letter of your name?: ");
   scanf("%c", &name);
 
-  printf("What is the first letter of the product?: \n");
-  scanf("%c", &prod);
+  printf("What is the product?: ");
+  scanf(" %c", &prod);
 
-  printf("How much does it cost?: \n");
+  printf("How much does it cost?: ");
   scanf("%d", &price);
 
-  printf("How many would you like?: \n");
+  printf("How many would you like?: ");
   scanf("%d", &quant);
 
   printf("%c", name);
