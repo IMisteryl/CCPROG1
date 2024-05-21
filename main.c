@@ -16,11 +16,11 @@ int main() {
   printf("How many would you like?: ");
   scanf("%d", &quant);
 
-  printf("%c", name);
+  printf("%c \n", name);
   
   for (x = 1; x <= quant; x++){
   
-    printf("%c %d", prod, price);
+    printf("%c %d\n", prod, price);
   }
   
   return 0;
