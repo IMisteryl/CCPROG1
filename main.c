@@ -1,27 +1,15 @@
 #include <stdio.h>
 
-int main() {
-  char name, prod;
-  int price, quant, x;
-  
-  printf("Hello! What is the first letter of your name?: ");
-  scanf("%c", &name);
 
-  printf("What is the product?: ");
-  scanf(" %c", &prod);
+int main (){
+float fRadius, fArea;
 
-  printf("How much does it cost?: ");
-  scanf("%d", &price);
+printf("What is the radius of the circle?: ");
+scanf("%f", &fRadius);
 
-  printf("How many would you like?: ");
-  scanf("%d", &quant);
+fArea = (fRadius * fRadius) * 3.1416;
 
-  printf("%c \n", name);
-  
-  for (x = 1; x <= quant; x++){
-  
-    printf("%c %d\n", prod, price);
-  }
-  
-  return 0;
+printf("The area of the circle with radius %.0f cm. is %.2f sq. cm", fRadius, fArea);
+
+    return 0;
 }
