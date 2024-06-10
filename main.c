@@ -42,11 +42,11 @@ int main(){
 	float fAmount, fBudget;
 	char cChoice = 'N';
 
+	printf("What is the budget?: ");
+	scanf(" %f", &fBudget);
+	
 	printf("What is the initial amount?: ");
 	scanf(" %f", &fAmount);
-	
-	printf("What is the initial budget?: ");
-	scanf(" %f", &fBudget);
 	
 	CheckBudget(fBudget, &fAmount, &cChoice);
 	
