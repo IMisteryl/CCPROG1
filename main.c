@@ -2,16 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void OpenMenu(char *cChoice){
-    printf("Welcome to the Random Numbers Game!\n");
-    printf("[E] Enter the Game\n");
-    printf("[V] View the Current Score\n");
-    printf("[X] Exit the Game\n");
 
-    printf("Answer: ");
-    scanf(" %c", cChoice);
-    
-}
 
 int GamePlay(){
     char cName, cChoice;
@@ -25,6 +16,16 @@ int GamePlay(){
 
     printf("Enter here: ");
     scanf("%c", &cChoice);
+
+    switch (cChoice){
+        case 'S':
+            GamePlay();
+            break;
+
+        case 'X':
+            OpenMenu(&cChoice);
+            break;
+    }
 
     return 0;
 }
@@ -52,6 +53,17 @@ int RNG(){
     printf("Random Number 2: %d\n", num2);
     
     return 0;
+}
+
+void OpenMenu(char *cChoice){
+    printf("Welcome to the Random Numbers Game!\n");
+    printf("[E] Enter the Game\n");
+    printf("[V] View the Current Score\n");
+    printf("[X] Exit the Game\n");
+
+    printf("Answer: ");
+    scanf(" %c", cChoice);
+    
 }
 
 int main (){
