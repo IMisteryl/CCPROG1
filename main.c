@@ -2,13 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-
-
 int GamePlay(){
     char cName, cChoice;
+    int nChoice;
 
     printf("Enter the first letter of your name? ");
-    scanf("%c", &cName);
+    scanf(" %c", &cName);
     
     printf("Hi %c! Let's start the game!\n", cName);
     printf("[S] Start the Game\n");
@@ -17,21 +16,12 @@ int GamePlay(){
     printf("Enter here: ");
     scanf("%c", &cChoice);
 
-    switch (cChoice){
-        case 'S':
-            GamePlay();
-            break;
-
-        case 'X':
-            OpenMenu(&cChoice);
-            break;
-    }
-
     return 0;
 }
 
 char ShowLevel(){
     
+    return 0;
 }
 
 int ViewScore(){
@@ -56,21 +46,56 @@ int RNG(){
 }
 
 void OpenMenu(char *cChoice){
+    int nChoice;
+
+    nChoice = 0; // if nChoice = 1, choice is valid, if 0 it's invalid
+
     printf("Welcome to the Random Numbers Game!\n");
     printf("[E] Enter the Game\n");
     printf("[V] View the Current Score\n");
     printf("[X] Exit the Game\n");
 
+while (nChoice = 0){
     printf("Answer: ");
     scanf(" %c", cChoice);
-    
+
+    Choice_Action(&cChoice, &nChoice);
+    }
 }
 
+void Choice_Action (char *cChoice, int *nChoice){
+
+        switch (*cChoice){
+        case 'E':
+            GamePlay();
+            *nChoice = 1;
+            break;
+
+        case 'V':
+            ViewScore();
+            *nChoice = 1;
+            break;
+        
+        case 'X':
+            *nChoice = 1;
+            break;
+
+        case 'S':
+            GamePlay();
+            break;
+
+        default:
+            printf("Invalid Choice");
+            nChoice = 0;
+            break;
+        }
+        
+}
 int main (){
     char cName, cChoice;
 
     OpenMenu(&cChoice);
-    
+
 
     return 0;
 }
